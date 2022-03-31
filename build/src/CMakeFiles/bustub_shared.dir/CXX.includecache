@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/include/buffer/clock_replacer.h
+list
+-
+mutex
+-
+vector
+-
+buffer/replacer.h
+../src/include/buffer/buffer/replacer.h
+common/config.h
+../src/include/buffer/common/config.h
+
+../src/include/buffer/replacer.h
+common/config.h
+../src/include/buffer/common/config.h
+
+../src/include/common/config.h
+atomic
+-
+chrono
+-
+cstdint
+-
+
+/home/sasa/bustub/src/buffer/clock_replacer.cpp
+buffer/clock_replacer.h
+/home/sasa/bustub/src/buffer/buffer/clock_replacer.h
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" disabled="2" errors="0" time="0" timestamp="2022-03-28T04:54:39.176" name="AllTests">
+  <testsuite name="BPlusTreeTests" tests="2" failures="0" disabled="2" skipped="0" errors="0" time="0" timestamp="1970-01-01T02:00:00.000">
+    <testcase name="DISABLED_DeleteTest1" file="/home/sasa/bustub/test/storage/b_plus_tree_delete_test.cpp" line="23" status="notrun" result="suppressed" time="0" timestamp="1970-01-01T02:00:00.000" classname="BPlusTreeTests" />
+    <testcase name="DISABLED_DeleteTest2" file="/home/sasa/bustub/test/storage/b_plus_tree_delete_test.cpp" line="101" status="notrun" result="suppressed" time="0" timestamp="1970-01-01T02:00:00.000" classname="BPlusTreeTests" />
+  </testsuite>
+</testsuites>

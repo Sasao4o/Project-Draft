@@ -1,0 +1,22 @@
+buffer_pool_manager_instance_test 2 0.00123876
+clock_replacer_test 2 0.00113856
+lru_replacer_test 2 0.000977427
+parallel_buffer_pool_manager_test 2 0.000995137
+catalog_test 2 0.00154814
+rwlatch_test 2 0.0028726
+lock_manager_test 2 0.00131137
+transaction_test 2 0.0010442
+hash_table_page_test 2 0.000967501
+hash_table_test 2 0.0010172
+executor_test 2 0.00120983
+starter_test 2 0.000951185
+recovery_test 2 0.00107173
+b_plus_tree_concurrent_test 2 0.00127992
+b_plus_tree_delete_test 2 0.00102929
+b_plus_tree_insert_test 2 0.00103502
+b_plus_tree_print_test 2 0.00101879
+disk_manager_test 2 0.00121738
+tmp_tuple_page_test 2 0.000997177
+tuple_test 2 0.00104195
+type_test 2 0.00120571
+---
