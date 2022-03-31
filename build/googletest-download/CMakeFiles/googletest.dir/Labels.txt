@@ -1,0 +1,14 @@
+# Target labels
+ googletest
+# Source files and their labels
+/home/ahmed/bustub/build/googletest-download/CMakeFiles/googletest
+/home/ahmed/bustub/build/googletest-download/CMakeFiles/googletest.rule
+/home/ahmed/bustub/build/googletest-download/CMakeFiles/googletest-complete.rule
+/home/ahmed/bustub/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-install.rule
+/home/ahmed/bustub/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule
+/home/ahmed/bustub/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-download.rule
+/home/ahmed/bustub/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-update.rule
+/home/ahmed/bustub/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-patch.rule
+/home/ahmed/bustub/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-configure.rule
+/home/ahmed/bustub/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-build.rule
+/home/ahmed/bustub/build/googletest-download/googletest-prefix/src/googletest-stamp/googletest-test.rule
