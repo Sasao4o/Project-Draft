@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ahmed/bustub
+CMAKE_SOURCE_DIR = /home/sasa/bustub
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ahmed/bustub/build
+CMAKE_BINARY_DIR = /home/sasa/bustub/build
 
 # Utility rule file for format.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ahmed/bustub/build
 include CMakeFiles/format.dir/progress.make
 
 CMakeFiles/format:
-	../build_support/run_clang_format.py CLANG_FORMAT_BIN-NOTFOUND /home/ahmed/bustub/build_support/clang_format_exclusions.txt --source_dirs /home/ahmed/bustub/src,/home/ahmed/bustub/test, --fix --quiet
+	../build_support/run_clang_format.py /usr/bin/clang-format-8 /home/sasa/bustub/build_support/clang_format_exclusions.txt --source_dirs /home/sasa/bustub/src,/home/sasa/bustub/test, --fix --quiet
 
 format: CMakeFiles/format
 format: CMakeFiles/format.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/format.dir/clean:
 .PHONY : CMakeFiles/format.dir/clean
 
 CMakeFiles/format.dir/depend:
-	cd /home/ahmed/bustub/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ahmed/bustub /home/ahmed/bustub /home/ahmed/bustub/build /home/ahmed/bustub/build /home/ahmed/bustub/build/CMakeFiles/format.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sasa/bustub/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sasa/bustub /home/sasa/bustub /home/sasa/bustub/build /home/sasa/bustub/build /home/sasa/bustub/build/CMakeFiles/format.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/format.dir/depend
 

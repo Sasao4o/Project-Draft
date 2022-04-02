@@ -6,5 +6,5 @@ CXX_FLAGS =  -fPIC -Wall -Wextra -Werror -march=native -Wno-unused-parameter -Wn
 
 CXX_DEFINES = -Dthirdparty_murmur3_EXPORTS
 
-CXX_INCLUDES = -I/home/ahmed/bustub/src -I/home/ahmed/bustub/src/include -I/home/ahmed/bustub/test/include -I/home/ahmed/bustub/third_party 
+CXX_INCLUDES = -I/home/sasa/bustub/src -I/home/sasa/bustub/src/include -I/home/sasa/bustub/test/include -I/home/sasa/bustub/third_party 
 

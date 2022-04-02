@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/ahmed/bustub/build/googletest-src/googletest/src/gtest_main.cc
+/home/sasa/bustub/build/googletest-src/googletest/src/gtest_main.cc
 cstdio
 -
 gtest/gtest.h
-/home/ahmed/bustub/build/googletest-src/googletest/src/gtest/gtest.h
+/home/sasa/bustub/build/googletest-src/googletest/src/gtest/gtest.h
 
 googletest-src/googletest/include/gtest/gtest-assertion-result.h
 memory

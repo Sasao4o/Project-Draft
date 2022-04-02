@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=
 
 CXX_DEFINES = -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_main_EXPORTS
 
-CXX_INCLUDES = -isystem /home/ahmed/bustub/build/googletest-src/googlemock/include -isystem /home/ahmed/bustub/build/googletest-src/googlemock -isystem /home/ahmed/bustub/build/googletest-src/googletest/include -isystem /home/ahmed/bustub/build/googletest-src/googletest 
+CXX_INCLUDES = -isystem /home/sasa/bustub/build/googletest-src/googlemock/include -isystem /home/sasa/bustub/build/googletest-src/googlemock -isystem /home/sasa/bustub/build/googletest-src/googletest/include -isystem /home/sasa/bustub/build/googletest-src/googletest 
 

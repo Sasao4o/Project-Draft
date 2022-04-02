@@ -1,4 +1,4 @@
-# Install script for directory: /home/ahmed/bustub/test
+# Install script for directory: /home/sasa/bustub/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

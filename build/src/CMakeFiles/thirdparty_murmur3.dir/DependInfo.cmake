@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ahmed/bustub/third_party/murmur3/MurmurHash3.cpp" "/home/ahmed/bustub/build/src/CMakeFiles/thirdparty_murmur3.dir/__/third_party/murmur3/MurmurHash3.cpp.o"
+  "/home/sasa/bustub/third_party/murmur3/MurmurHash3.cpp" "/home/sasa/bustub/build/src/CMakeFiles/thirdparty_murmur3.dir/__/third_party/murmur3/MurmurHash3.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

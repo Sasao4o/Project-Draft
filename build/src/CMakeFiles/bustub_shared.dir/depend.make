@@ -8,6 +8,7 @@ src/CMakeFiles/bustub_shared.dir/buffer/buffer_pool_manager_instance.cpp.o: ../s
 src/CMakeFiles/bustub_shared.dir/buffer/buffer_pool_manager_instance.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/buffer/buffer_pool_manager_instance.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/buffer/buffer_pool_manager_instance.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/buffer/buffer_pool_manager_instance.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/buffer/buffer_pool_manager_instance.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/buffer/buffer_pool_manager_instance.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/buffer/buffer_pool_manager_instance.cpp.o: ../src/include/common/rid.h
@@ -25,10 +26,12 @@ src/CMakeFiles/bustub_shared.dir/buffer/buffer_pool_manager_instance.cpp.o: ../s
 
 src/CMakeFiles/bustub_shared.dir/buffer/clock_replacer.cpp.o: ../src/include/buffer/clock_replacer.h
 src/CMakeFiles/bustub_shared.dir/buffer/clock_replacer.cpp.o: ../src/include/buffer/replacer.h
+src/CMakeFiles/bustub_shared.dir/buffer/clock_replacer.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/buffer/clock_replacer.cpp.o: ../src/buffer/clock_replacer.cpp
 
 src/CMakeFiles/bustub_shared.dir/buffer/lru_replacer.cpp.o: ../src/include/buffer/lru_replacer.h
 src/CMakeFiles/bustub_shared.dir/buffer/lru_replacer.cpp.o: ../src/include/buffer/replacer.h
+src/CMakeFiles/bustub_shared.dir/buffer/lru_replacer.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/buffer/lru_replacer.cpp.o: ../src/buffer/lru_replacer.cpp
 
 src/CMakeFiles/bustub_shared.dir/buffer/parallel_buffer_pool_manager.cpp.o: ../src/include/buffer/buffer_pool_manager.h
@@ -38,6 +41,7 @@ src/CMakeFiles/bustub_shared.dir/buffer/parallel_buffer_pool_manager.cpp.o: ../s
 src/CMakeFiles/bustub_shared.dir/buffer/parallel_buffer_pool_manager.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/buffer/parallel_buffer_pool_manager.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/buffer/parallel_buffer_pool_manager.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/buffer/parallel_buffer_pool_manager.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/buffer/parallel_buffer_pool_manager.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/buffer/parallel_buffer_pool_manager.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/buffer/parallel_buffer_pool_manager.cpp.o: ../src/include/common/rid.h
@@ -76,6 +80,7 @@ src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../src/include/c
 src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../src/include/catalog/schema.h
 src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../src/include/catalog/table_generator.h
+src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../src/include/common/macros.h
@@ -110,6 +115,7 @@ src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../src/include/t
 src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../third_party/murmur3/MurmurHash3.h
 src/CMakeFiles/bustub_shared.dir/catalog/table_generator.cpp.o: ../src/catalog/table_generator.cpp
 
+src/CMakeFiles/bustub_shared.dir/common/config.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/common/config.cpp.o: ../src/common/config.cpp
 
 src/CMakeFiles/bustub_shared.dir/common/util/string_util.cpp.o: ../src/include/common/util/string_util.h
@@ -117,6 +123,7 @@ src/CMakeFiles/bustub_shared.dir/common/util/string_util.cpp.o: ../src/common/ut
 
 src/CMakeFiles/bustub_shared.dir/concurrency/lock_manager.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/concurrency/lock_manager.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/concurrency/lock_manager.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/concurrency/lock_manager.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/concurrency/lock_manager.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/concurrency/lock_manager.cpp.o: ../src/include/common/macros.h
@@ -139,6 +146,7 @@ src/CMakeFiles/bustub_shared.dir/concurrency/transaction_manager.cpp.o: ../src/i
 src/CMakeFiles/bustub_shared.dir/concurrency/transaction_manager.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/concurrency/transaction_manager.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/concurrency/transaction_manager.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/concurrency/transaction_manager.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/concurrency/transaction_manager.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/concurrency/transaction_manager.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/concurrency/transaction_manager.cpp.o: ../src/include/common/macros.h
@@ -177,6 +185,7 @@ src/CMakeFiles/bustub_shared.dir/container/hash/extendible_hash_table.cpp.o: ../
 src/CMakeFiles/bustub_shared.dir/container/hash/extendible_hash_table.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/container/hash/extendible_hash_table.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/container/hash/extendible_hash_table.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/container/hash/extendible_hash_table.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/container/hash/extendible_hash_table.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/container/hash/extendible_hash_table.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/container/hash/extendible_hash_table.cpp.o: ../src/include/common/macros.h
@@ -208,6 +217,7 @@ src/CMakeFiles/bustub_shared.dir/container/hash/linear_probe_hash_table.cpp.o: .
 src/CMakeFiles/bustub_shared.dir/container/hash/linear_probe_hash_table.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/container/hash/linear_probe_hash_table.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/container/hash/linear_probe_hash_table.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/container/hash/linear_probe_hash_table.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/container/hash/linear_probe_hash_table.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/container/hash/linear_probe_hash_table.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/container/hash/linear_probe_hash_table.cpp.o: ../src/include/common/macros.h
@@ -241,6 +251,7 @@ src/CMakeFiles/bustub_shared.dir/execution/aggregation_executor.cpp.o: ../src/in
 src/CMakeFiles/bustub_shared.dir/execution/aggregation_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/aggregation_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/aggregation_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/aggregation_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/aggregation_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/aggregation_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/aggregation_executor.cpp.o: ../src/include/common/macros.h
@@ -296,6 +307,7 @@ src/CMakeFiles/bustub_shared.dir/execution/delete_executor.cpp.o: ../src/include
 src/CMakeFiles/bustub_shared.dir/execution/delete_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/delete_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/delete_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/delete_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/delete_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/delete_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/delete_executor.cpp.o: ../src/include/common/macros.h
@@ -342,6 +354,7 @@ src/CMakeFiles/bustub_shared.dir/execution/distinct_executor.cpp.o: ../src/inclu
 src/CMakeFiles/bustub_shared.dir/execution/distinct_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/distinct_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/distinct_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/distinct_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/distinct_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/distinct_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/distinct_executor.cpp.o: ../src/include/common/macros.h
@@ -387,6 +400,7 @@ src/CMakeFiles/bustub_shared.dir/execution/executor_factory.cpp.o: ../src/includ
 src/CMakeFiles/bustub_shared.dir/execution/executor_factory.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/executor_factory.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/executor_factory.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/executor_factory.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/executor_factory.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/executor_factory.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/executor_factory.cpp.o: ../src/include/common/macros.h
@@ -463,6 +477,7 @@ src/CMakeFiles/bustub_shared.dir/execution/hash_join_executor.cpp.o: ../src/incl
 src/CMakeFiles/bustub_shared.dir/execution/hash_join_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/hash_join_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/hash_join_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/hash_join_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/hash_join_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/hash_join_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/hash_join_executor.cpp.o: ../src/include/common/macros.h
@@ -508,6 +523,7 @@ src/CMakeFiles/bustub_shared.dir/execution/index_scan_executor.cpp.o: ../src/inc
 src/CMakeFiles/bustub_shared.dir/execution/index_scan_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/index_scan_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/index_scan_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/index_scan_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/index_scan_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/index_scan_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/index_scan_executor.cpp.o: ../src/include/common/macros.h
@@ -554,6 +570,7 @@ src/CMakeFiles/bustub_shared.dir/execution/insert_executor.cpp.o: ../src/include
 src/CMakeFiles/bustub_shared.dir/execution/insert_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/insert_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/insert_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/insert_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/insert_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/insert_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/insert_executor.cpp.o: ../src/include/common/macros.h
@@ -600,6 +617,7 @@ src/CMakeFiles/bustub_shared.dir/execution/limit_executor.cpp.o: ../src/include/
 src/CMakeFiles/bustub_shared.dir/execution/limit_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/limit_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/limit_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/limit_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/limit_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/limit_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/limit_executor.cpp.o: ../src/include/common/macros.h
@@ -645,6 +663,7 @@ src/CMakeFiles/bustub_shared.dir/execution/nested_index_join_executor.cpp.o: ../
 src/CMakeFiles/bustub_shared.dir/execution/nested_index_join_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/nested_index_join_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/nested_index_join_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/nested_index_join_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/nested_index_join_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/nested_index_join_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/nested_index_join_executor.cpp.o: ../src/include/common/macros.h
@@ -691,6 +710,7 @@ src/CMakeFiles/bustub_shared.dir/execution/nested_loop_join_executor.cpp.o: ../s
 src/CMakeFiles/bustub_shared.dir/execution/nested_loop_join_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/nested_loop_join_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/nested_loop_join_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/nested_loop_join_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/nested_loop_join_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/nested_loop_join_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/nested_loop_join_executor.cpp.o: ../src/include/common/macros.h
@@ -737,6 +757,7 @@ src/CMakeFiles/bustub_shared.dir/execution/seq_scan_executor.cpp.o: ../src/inclu
 src/CMakeFiles/bustub_shared.dir/execution/seq_scan_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/seq_scan_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/seq_scan_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/seq_scan_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/seq_scan_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/seq_scan_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/seq_scan_executor.cpp.o: ../src/include/common/macros.h
@@ -783,6 +804,7 @@ src/CMakeFiles/bustub_shared.dir/execution/update_executor.cpp.o: ../src/include
 src/CMakeFiles/bustub_shared.dir/execution/update_executor.cpp.o: ../src/include/catalog/catalog.h
 src/CMakeFiles/bustub_shared.dir/execution/update_executor.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/execution/update_executor.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/execution/update_executor.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/execution/update_executor.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/execution/update_executor.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/execution/update_executor.cpp.o: ../src/include/common/macros.h
@@ -836,6 +858,7 @@ src/CMakeFiles/bustub_shared.dir/recovery/checkpoint_manager.cpp.o: ../src/inclu
 src/CMakeFiles/bustub_shared.dir/recovery/checkpoint_manager.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/recovery/checkpoint_manager.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/recovery/checkpoint_manager.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/recovery/checkpoint_manager.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/recovery/checkpoint_manager.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/recovery/checkpoint_manager.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/recovery/checkpoint_manager.cpp.o: ../src/include/common/macros.h
@@ -858,6 +881,7 @@ src/CMakeFiles/bustub_shared.dir/recovery/checkpoint_manager.cpp.o: ../src/recov
 
 src/CMakeFiles/bustub_shared.dir/recovery/log_manager.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/recovery/log_manager.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/recovery/log_manager.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/recovery/log_manager.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/recovery/log_manager.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/recovery/log_manager.cpp.o: ../src/include/common/rid.h
@@ -877,6 +901,7 @@ src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/include/buf
 src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/include/common/macros.h
@@ -897,6 +922,7 @@ src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/include/typ
 src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/include/type/value.h
 src/CMakeFiles/bustub_shared.dir/recovery/log_recovery.cpp.o: ../src/recovery/log_recovery.cpp
 
+src/CMakeFiles/bustub_shared.dir/storage/disk/disk_manager.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/disk/disk_manager.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/disk/disk_manager.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/storage/disk/disk_manager.cpp.o: ../src/include/storage/disk/disk_manager.h
@@ -910,6 +936,7 @@ src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree.cpp.o: ../src/include
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree.cpp.o: ../src/include/common/macros.h
@@ -940,6 +967,7 @@ src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree_index.cpp.o: ../src/i
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree_index.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree_index.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree_index.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree_index.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree_index.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree_index.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/storage/index/b_plus_tree_index.cpp.o: ../src/include/common/macros.h
@@ -971,6 +999,7 @@ src/CMakeFiles/bustub_shared.dir/storage/index/extendible_hash_table_index.cpp.o
 src/CMakeFiles/bustub_shared.dir/storage/index/extendible_hash_table_index.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/storage/index/extendible_hash_table_index.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/index/extendible_hash_table_index.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/index/extendible_hash_table_index.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/index/extendible_hash_table_index.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/index/extendible_hash_table_index.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/storage/index/extendible_hash_table_index.cpp.o: ../src/include/common/macros.h
@@ -1004,6 +1033,7 @@ src/CMakeFiles/bustub_shared.dir/storage/index/index_iterator.cpp.o: ../src/incl
 src/CMakeFiles/bustub_shared.dir/storage/index/index_iterator.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/storage/index/index_iterator.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/index/index_iterator.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/index/index_iterator.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/index/index_iterator.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/index/index_iterator.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/storage/index/index_iterator.cpp.o: ../src/include/common/rid.h
@@ -1029,6 +1059,7 @@ src/CMakeFiles/bustub_shared.dir/storage/index/linear_probe_hash_table_index.cpp
 src/CMakeFiles/bustub_shared.dir/storage/index/linear_probe_hash_table_index.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/storage/index/linear_probe_hash_table_index.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/index/linear_probe_hash_table_index.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/index/linear_probe_hash_table_index.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/index/linear_probe_hash_table_index.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/index/linear_probe_hash_table_index.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/storage/index/linear_probe_hash_table_index.cpp.o: ../src/include/common/macros.h
@@ -1063,6 +1094,7 @@ src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_internal_page.cpp.o: .
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_internal_page.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_internal_page.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_internal_page.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_internal_page.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_internal_page.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_internal_page.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_internal_page.cpp.o: ../src/include/common/rid.h
@@ -1087,6 +1119,7 @@ src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_leaf_page.cpp.o: ../sr
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_leaf_page.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_leaf_page.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_leaf_page.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_leaf_page.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_leaf_page.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_leaf_page.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_leaf_page.cpp.o: ../src/include/common/rid.h
@@ -1111,6 +1144,7 @@ src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_page.cpp.o: ../src/inc
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_page.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_page.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_page.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_page.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_page.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_page.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_page.cpp.o: ../src/include/common/rid.h
@@ -1130,6 +1164,7 @@ src/CMakeFiles/bustub_shared.dir/storage/page/b_plus_tree_page.cpp.o: ../src/sto
 
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_block_page.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_block_page.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_block_page.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_block_page.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_block_page.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_block_page.cpp.o: ../src/include/common/rid.h
@@ -1146,6 +1181,7 @@ src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_block_page.cpp.o: ../sr
 
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_bucket_page.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_bucket_page.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_bucket_page.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_bucket_page.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_bucket_page.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_bucket_page.cpp.o: ../src/include/common/macros.h
@@ -1166,6 +1202,7 @@ src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_bucket_page.cpp.o: ../s
 
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_directory_page.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_directory_page.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_directory_page.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_directory_page.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_directory_page.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_directory_page.cpp.o: ../src/include/common/macros.h
@@ -1182,6 +1219,7 @@ src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_directory_page.cpp.o: .
 
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_header_page.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_header_page.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_header_page.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_header_page.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_header_page.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_header_page.cpp.o: ../src/include/common/rid.h
@@ -1195,6 +1233,7 @@ src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_header_page.cpp.o: ../s
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_header_page.cpp.o: ../src/include/type/value.h
 src/CMakeFiles/bustub_shared.dir/storage/page/hash_table_header_page.cpp.o: ../src/storage/page/hash_table_header_page.cpp
 
+src/CMakeFiles/bustub_shared.dir/storage/page/header_page.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/page/header_page.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/storage/page/header_page.cpp.o: ../src/include/common/rwlatch.h
 src/CMakeFiles/bustub_shared.dir/storage/page/header_page.cpp.o: ../src/include/storage/page/header_page.h
@@ -1203,6 +1242,7 @@ src/CMakeFiles/bustub_shared.dir/storage/page/header_page.cpp.o: ../src/storage/
 
 src/CMakeFiles/bustub_shared.dir/storage/page/table_page.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/page/table_page.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/page/table_page.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/page/table_page.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/page/table_page.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/storage/page/table_page.cpp.o: ../src/include/common/macros.h
@@ -1228,6 +1268,7 @@ src/CMakeFiles/bustub_shared.dir/storage/table/table_heap.cpp.o: ../src/include/
 src/CMakeFiles/bustub_shared.dir/storage/table/table_heap.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/storage/table/table_heap.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/table/table_heap.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/table/table_heap.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/table/table_heap.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/table/table_heap.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/storage/table/table_heap.cpp.o: ../src/include/common/macros.h
@@ -1255,6 +1296,7 @@ src/CMakeFiles/bustub_shared.dir/storage/table/table_iterator.cpp.o: ../src/incl
 src/CMakeFiles/bustub_shared.dir/storage/table/table_iterator.cpp.o: ../src/include/buffer/replacer.h
 src/CMakeFiles/bustub_shared.dir/storage/table/table_iterator.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/table/table_iterator.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/table/table_iterator.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/table/table_iterator.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/table/table_iterator.cpp.o: ../src/include/common/logger.h
 src/CMakeFiles/bustub_shared.dir/storage/table/table_iterator.cpp.o: ../src/include/common/macros.h
@@ -1278,6 +1320,7 @@ src/CMakeFiles/bustub_shared.dir/storage/table/table_iterator.cpp.o: ../src/stor
 
 src/CMakeFiles/bustub_shared.dir/storage/table/tuple.cpp.o: ../src/include/catalog/column.h
 src/CMakeFiles/bustub_shared.dir/storage/table/tuple.cpp.o: ../src/include/catalog/schema.h
+src/CMakeFiles/bustub_shared.dir/storage/table/tuple.cpp.o: ../src/include/common/config.h
 src/CMakeFiles/bustub_shared.dir/storage/table/tuple.cpp.o: ../src/include/common/exception.h
 src/CMakeFiles/bustub_shared.dir/storage/table/tuple.cpp.o: ../src/include/common/macros.h
 src/CMakeFiles/bustub_shared.dir/storage/table/tuple.cpp.o: ../src/include/common/rid.h

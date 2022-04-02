@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ahmed/bustub
+CMAKE_SOURCE_DIR = /home/sasa/bustub
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ahmed/bustub/build
+CMAKE_BINARY_DIR = /home/sasa/bustub/build
 
 # Utility rule file for check-clang-tidy.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ahmed/bustub/build
 include CMakeFiles/check-clang-tidy.dir/progress.make
 
 CMakeFiles/check-clang-tidy:
-	../build_support/run_clang_tidy.py -clang-tidy-binary CLANG_TIDY_BIN-NOTFOUND -p /home/ahmed/bustub/build
+	../build_support/run_clang_tidy.py -clang-tidy-binary /usr/bin/clang-tidy-8 -p /home/sasa/bustub/build
 
 check-clang-tidy: CMakeFiles/check-clang-tidy
 check-clang-tidy: CMakeFiles/check-clang-tidy.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/check-clang-tidy.dir/clean:
 .PHONY : CMakeFiles/check-clang-tidy.dir/clean
 
 CMakeFiles/check-clang-tidy.dir/depend:
-	cd /home/ahmed/bustub/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ahmed/bustub /home/ahmed/bustub /home/ahmed/bustub/build /home/ahmed/bustub/build /home/ahmed/bustub/build/CMakeFiles/check-clang-tidy.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sasa/bustub/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sasa/bustub /home/sasa/bustub /home/sasa/bustub/build /home/sasa/bustub/build /home/sasa/bustub/build/CMakeFiles/check-clang-tidy.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/check-clang-tidy.dir/depend
 
