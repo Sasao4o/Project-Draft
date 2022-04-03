@@ -26,9 +26,10 @@ ClockReplacer::~ClockReplacer() = default;
 
 bool ClockReplacer::Victim(frame_id_t *frame_id) { 
     int i=pointer;
-    while(true){
-
-     if(available[i]&&clkreplacer[i]){
+    
+   if (clockReplacerSize <= 0) return false;
+  	while (1) {  
+   if(available[i]&&clkreplacer[i]){
 	     //Second Chance Done
        clkreplacer[i]=false;
        i=(i+1)%size;
@@ -41,16 +42,13 @@ bool ClockReplacer::Victim(frame_id_t *frame_id) {
        clockReplacerSize--;
        // In Case Of Empty Frame Or Victim Return It
        *frame_id = pointer;
-      // clkreplacer[pointer]=false;
+       clkreplacer[pointer]=false;
+       
        return true;
      }
-     i=(i+1)%size;
-     
+    i=(i+1)%size;
+      
     }
-    
-    
-    
-    
     
     
     
