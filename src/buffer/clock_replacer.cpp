@@ -18,7 +18,7 @@ ClockReplacer::ClockReplacer(size_t num_pages) {
 pointer=0;
 size=num_pages; //BufferPool Size
 clockReplacerSize = 0;
-clkreplacer=vector<bool>(num_pages,false);:
+clkreplacer=vector<bool>(num_pages,false);
 available=vector<bool>(num_pages,false);
 }
 

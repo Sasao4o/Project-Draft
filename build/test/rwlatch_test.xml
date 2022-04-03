@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="0" disabled="0" errors="0" time="0.003" timestamp="2022-04-02T06:07:12.006" name="AllTests">
+  <testsuite name="RWLatchTest" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0.003" timestamp="2022-04-02T06:07:12.006">
+    <testcase name="BasicTest" file="/home/sasa/bustub/test/common/rwlatch_test.cpp" line="43" status="run" result="completed" time="0.003" timestamp="2022-04-02T06:07:12.006" classname="RWLatchTest" />
+  </testsuite>
+</testsuites>
