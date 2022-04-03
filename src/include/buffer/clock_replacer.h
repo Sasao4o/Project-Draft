@@ -45,7 +45,7 @@ class ClockReplacer : public Replacer {
 
   size_t Size() override;
 
- private:
+ 
   int pointer;
   std::vector<bool> clkreplacer;
   std::vector<bool> available;

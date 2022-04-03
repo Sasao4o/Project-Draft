@@ -50,6 +50,11 @@ BufferPoolManagerInstance::~BufferPoolManagerInstance() {
   delete replacer_;
 }
 
+
+std::map<page_id_t, frame_id_t> Getpagetable()
+{
+    return pagetable;
+}    
 bool BufferPoolManagerInstance::FlushPgImp(page_id_t page_id) {
   // Make sure you call DiskManager::WritePage!
   //Put All Changes Back To Disk 
@@ -80,7 +85,7 @@ Page *BufferPoolManagerInstance::NewPgImp(page_id_t *page_id) {
   // 3.   Update P's metadata, zero out memory and add P to the page table.
   // 4.   Set the page ID output parameter. Return a pointer to P.
        
-       	frame_id_t frame;
+       	frame_id_t frame = -1;
 	if (free_list_.empty()){
         bool foundVictim = replacer_->Victim(&frame);
            if(!foundVictim){
@@ -103,6 +108,7 @@ Page *BufferPoolManagerInstance::NewPgImp(page_id_t *page_id) {
 	         pages_[frame].pin_count_=1;
 		 pages_[frame].is_dirty_=false;
 		 replacer_->Pin(frame);
+		// replacer_->available[frame] = false;
   return &pages_[frame];
 }
 
@@ -125,7 +131,7 @@ Page *BufferPoolManagerInstance::FetchPgImp(page_id_t page_id) {
 	frame_id_t myFrame;
 	if (free_list_.empty()) { 
 		bool foundVictim = replacer_->Victim(&myFrame);
-		if(foundVictim) {
+		if(foundVictim == true) {
 	           page_id_t oldPageId = pages_[myFrame].page_id_; 
 		FlushPgImp(oldPageId);
  		page_table_.erase(page_table_[oldPageId]);
@@ -135,7 +141,7 @@ Page *BufferPoolManagerInstance::FetchPgImp(page_id_t page_id) {
 		Page *p = &pages_[myFrame];
 		p->pin_count_ = 1;
 		disk_manager_->ReadPage(page_id, p->data_);
-		
+		//while(true) {}	
 		return p;	
 		}  else {
 			return nullptr;

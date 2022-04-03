@@ -46,8 +46,8 @@ bool ClockReplacer::Victim(frame_id_t *frame_id) {
        
        return true;
      }
-    i=(i+1)%size;
-      
+     i=(i+1)%size;
+    
     }
     
     
