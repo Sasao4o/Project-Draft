@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/sasa/bustub/test/storage/disk_manager_test.cpp" "/home/sasa/bustub/build/test/CMakeFiles/disk_manager_test.dir/storage/disk_manager_test.cpp.o"
+  "/home/ahmed/bustub/test/storage/disk_manager_test.cpp" "/home/ahmed/bustub/build/test/CMakeFiles/disk_manager_test.dir/storage/disk_manager_test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -22,11 +22,11 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/sasa/bustub/build/src/CMakeFiles/bustub_shared.dir/DependInfo.cmake"
-  "/home/sasa/bustub/build/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
-  "/home/sasa/bustub/build/src/CMakeFiles/thirdparty_murmur3.dir/DependInfo.cmake"
-  "/home/sasa/bustub/build/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
-  "/home/sasa/bustub/build/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/ahmed/bustub/build/src/CMakeFiles/bustub_shared.dir/DependInfo.cmake"
+  "/home/ahmed/bustub/build/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
+  "/home/ahmed/bustub/build/src/CMakeFiles/thirdparty_murmur3.dir/DependInfo.cmake"
+  "/home/ahmed/bustub/build/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
+  "/home/ahmed/bustub/build/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

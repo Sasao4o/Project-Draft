@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sasa/bustub
+CMAKE_SOURCE_DIR = /home/ahmed/bustub
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sasa/bustub/build
+CMAKE_BINARY_DIR = /home/ahmed/bustub/build
 
 # Utility rule file for build-tests.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/sasa/bustub/build
 include test/CMakeFiles/build-tests.dir/progress.make
 
 test/CMakeFiles/build-tests:
-	cd /home/sasa/bustub/build/test && /usr/bin/ctest --show-only
+	cd /home/ahmed/bustub/build/test && /usr/bin/ctest --show-only
 
 build-tests: test/CMakeFiles/build-tests
 build-tests: test/CMakeFiles/build-tests.dir/build.make
@@ -67,10 +67,10 @@ test/CMakeFiles/build-tests.dir/build: build-tests
 .PHONY : test/CMakeFiles/build-tests.dir/build
 
 test/CMakeFiles/build-tests.dir/clean:
-	cd /home/sasa/bustub/build/test && $(CMAKE_COMMAND) -P CMakeFiles/build-tests.dir/cmake_clean.cmake
+	cd /home/ahmed/bustub/build/test && $(CMAKE_COMMAND) -P CMakeFiles/build-tests.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/build-tests.dir/clean
 
 test/CMakeFiles/build-tests.dir/depend:
-	cd /home/sasa/bustub/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sasa/bustub /home/sasa/bustub/test /home/sasa/bustub/build /home/sasa/bustub/build/test /home/sasa/bustub/build/test/CMakeFiles/build-tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ahmed/bustub/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ahmed/bustub /home/ahmed/bustub/test /home/ahmed/bustub/build /home/ahmed/bustub/build/test /home/ahmed/bustub/build/test/CMakeFiles/build-tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/CMakeFiles/build-tests.dir/depend
 

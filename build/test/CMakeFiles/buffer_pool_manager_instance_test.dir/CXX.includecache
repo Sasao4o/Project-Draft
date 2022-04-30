@@ -238,9 +238,9 @@ type/limits.h
 type/type.h
 ../src/include/type/type/type.h
 
-/home/sasa/bustub/test/buffer/buffer_pool_manager_instance_test.cpp
+/home/ahmed/bustub/test/buffer/buffer_pool_manager_instance_test.cpp
 buffer/buffer_pool_manager_instance.h
-/home/sasa/bustub/test/buffer/buffer/buffer_pool_manager_instance.h
+/home/ahmed/bustub/test/buffer/buffer/buffer_pool_manager_instance.h
 cstdio
 -
 random
@@ -248,9 +248,9 @@ random
 string
 -
 buffer/buffer_pool_manager.h
-/home/sasa/bustub/test/buffer/buffer/buffer_pool_manager.h
+/home/ahmed/bustub/test/buffer/buffer/buffer_pool_manager.h
 gtest/gtest.h
-/home/sasa/bustub/test/buffer/gtest/gtest.h
+/home/ahmed/bustub/test/buffer/gtest/gtest.h
 
 googletest-src/googletest/include/gtest/gtest-assertion-result.h
 memory

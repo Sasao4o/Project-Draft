@@ -5,7 +5,7 @@ test/CMakeFiles/clock_replacer_test.dir/buffer/clock_replacer_test.cpp.o
  ../src/include/buffer/clock_replacer.h
  ../src/include/buffer/replacer.h
  ../src/include/common/config.h
- /home/sasa/bustub/test/buffer/clock_replacer_test.cpp
+ /home/ahmed/bustub/test/buffer/clock_replacer_test.cpp
  googletest-src/googletest/include/gtest/gtest-assertion-result.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-matchers.h

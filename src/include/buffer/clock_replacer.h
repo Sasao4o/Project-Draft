@@ -44,14 +44,14 @@ class ClockReplacer : public Replacer {
   void Unpin(frame_id_t frame_id) override;
 
   size_t Size() override;
+ private:
 
- 
   int pointer;
   std::vector<bool> clkreplacer;
   std::vector<bool> available;
    size_t size;
    size_t clockReplacerSize;
-
+   std::mutex latch_;
 };
 
 }  // namespace bustub

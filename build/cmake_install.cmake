@@ -1,4 +1,4 @@
-# Install script for directory: /home/sasa/bustub
+# Install script for directory: /home/ahmed/bustub
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/sasa/bustub/build/googletest-build/cmake_install.cmake")
-  include("/home/sasa/bustub/build/src/cmake_install.cmake")
-  include("/home/sasa/bustub/build/test/cmake_install.cmake")
+  include("/home/ahmed/bustub/build/googletest-build/cmake_install.cmake")
+  include("/home/ahmed/bustub/build/src/cmake_install.cmake")
+  include("/home/ahmed/bustub/build/test/cmake_install.cmake")
 
 endif()
 
@@ -53,5 +53,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sasa/bustub/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ahmed/bustub/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

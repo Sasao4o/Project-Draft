@@ -30,7 +30,7 @@ chrono
 cstdint
 -
 
-/home/sasa/bustub/test/buffer/clock_replacer_test.cpp
+/home/ahmed/bustub/test/buffer/clock_replacer_test.cpp
 cstdio
 -
 thread
@@ -38,9 +38,9 @@ thread
 vector
 -
 buffer/clock_replacer.h
-/home/sasa/bustub/test/buffer/buffer/clock_replacer.h
+/home/ahmed/bustub/test/buffer/buffer/clock_replacer.h
 gtest/gtest.h
-/home/sasa/bustub/test/buffer/gtest/gtest.h
+/home/ahmed/bustub/test/buffer/gtest/gtest.h
 
 googletest-src/googletest/include/gtest/gtest-assertion-result.h
 memory

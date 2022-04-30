@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="4" failures="0" disabled="4" errors="0" time="0" timestamp="2022-04-02T06:07:12.013" name="AllTests">
-  <testsuite name="LockManagerTest" tests="4" failures="0" disabled="4" skipped="0" errors="0" time="0" timestamp="1970-01-01T02:00:00.000">
-    <testcase name="DISABLED_BasicTest" file="/home/sasa/bustub/test/concurrency/lock_manager_test.cpp" line="80" status="notrun" result="suppressed" time="0" timestamp="1970-01-01T02:00:00.000" classname="LockManagerTest" />
-    <testcase name="DISABLED_TwoPLTest" file="/home/sasa/bustub/test/concurrency/lock_manager_test.cpp" line="126" status="notrun" result="suppressed" time="0" timestamp="1970-01-01T02:00:00.000" classname="LockManagerTest" />
-    <testcase name="DISABLED_UpgradeLockTest" file="/home/sasa/bustub/test/concurrency/lock_manager_test.cpp" line="153" status="notrun" result="suppressed" time="0" timestamp="1970-01-01T02:00:00.000" classname="LockManagerTest" />
-    <testcase name="DISABLED_WoundWaitBasicTest" file="/home/sasa/bustub/test/concurrency/lock_manager_test.cpp" line="205" status="notrun" result="suppressed" time="0" timestamp="1970-01-01T02:00:00.000" classname="LockManagerTest" />
-  </testsuite>
-</testsuites>

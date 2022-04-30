@@ -25,11 +25,17 @@ available=vector<bool>(num_pages,false);
 ClockReplacer::~ClockReplacer() = default;
 
 bool ClockReplacer::Victim(frame_id_t *frame_id) { 
-    int i=pointer;
+      latch_.lock();  
+       	int i=pointer;
     
-   if (clockReplacerSize <= 0) return false;
-  	while (1) {  
-   if(available[i]&&clkreplacer[i]){
+   if (clockReplacerSize <= 0){
+	  latch_.unlock();
+	 
+	   return false;
+   }
+
+ while (true) {  
+     if(available[i]&&clkreplacer[i]){
 	     //Second Chance Done
        clkreplacer[i]=false;
        i=(i+1)%size;
@@ -43,31 +49,35 @@ bool ClockReplacer::Victim(frame_id_t *frame_id) {
        // In Case Of Empty Frame Or Victim Return It
        *frame_id = pointer;
        clkreplacer[pointer]=false;
-       
+       latch_.unlock();
        return true;
      }
      i=(i+1)%size;
-    
     }
-    
-    
-    
-    return false; }
+     latch_.unlock();
+     return false;
+}
 
 void ClockReplacer::Pin(frame_id_t frame_id) {
-      //latch
-       if (!available[frame_id]) return;
-      clockReplacerSize--;
+      latch_.lock();
+     if (available[frame_id]){
+     
       clkreplacer[frame_id]=false;
       available[frame_id]=false;
-
+      clockReplacerSize--;
+     }
+      latch_.unlock();
 }
 
 void ClockReplacer::Unpin(frame_id_t frame_id) {
-     if (available[frame_id]) return;
-     clockReplacerSize++;
-    clkreplacer[frame_id]=true;
-      available[frame_id]=true;
+        latch_.lock();
+       	if (!available[frame_id]){
+
+       clkreplacer[frame_id]=true;
+       available[frame_id]=true;
+       clockReplacerSize++;
+	}
+       latch_.unlock();
 }
 
 size_t ClockReplacer::Size() { return clockReplacerSize; }

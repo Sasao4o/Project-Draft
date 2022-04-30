@@ -23,7 +23,7 @@ test/CMakeFiles/buffer_pool_manager_instance_test.dir/buffer/buffer_pool_manager
  ../src/include/type/type.h
  ../src/include/type/type_id.h
  ../src/include/type/value.h
- /home/sasa/bustub/test/buffer/buffer_pool_manager_instance_test.cpp
+ /home/ahmed/bustub/test/buffer/buffer_pool_manager_instance_test.cpp
  googletest-src/googletest/include/gtest/gtest-assertion-result.h
  googletest-src/googletest/include/gtest/gtest-death-test.h
  googletest-src/googletest/include/gtest/gtest-matchers.h

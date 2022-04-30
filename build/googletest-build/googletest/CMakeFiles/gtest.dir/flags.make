@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=
 
 CXX_DEFINES = -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_EXPORTS
 
-CXX_INCLUDES = -I/home/sasa/bustub/build/googletest-src/googletest/include -I/home/sasa/bustub/build/googletest-src/googletest 
+CXX_INCLUDES = -I/home/ahmed/bustub/build/googletest-src/googletest/include -I/home/ahmed/bustub/build/googletest-src/googletest 
 

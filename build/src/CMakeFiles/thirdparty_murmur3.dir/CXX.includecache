@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/sasa/bustub/third_party/murmur3/MurmurHash3.cpp
+/home/ahmed/bustub/third_party/murmur3/MurmurHash3.cpp
 MurmurHash3.h
-/home/sasa/bustub/third_party/murmur3/MurmurHash3.h
+/home/ahmed/bustub/third_party/murmur3/MurmurHash3.h
 stdlib.h
 -
 
-/home/sasa/bustub/third_party/murmur3/MurmurHash3.h
+/home/ahmed/bustub/third_party/murmur3/MurmurHash3.h
 string
 -
 stdint.h

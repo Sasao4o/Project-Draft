@@ -6,5 +6,5 @@ CXX_FLAGS =  -fPIC -Wall -Wextra -Werror -march=native -Wno-unused-parameter -Wn
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sasa/bustub/src -I/home/sasa/bustub/src/include -I/home/sasa/bustub/test/include -I/home/sasa/bustub/third_party -isystem /home/sasa/bustub/build/googletest-src/googletest/include -isystem /home/sasa/bustub/build/googletest-src/googletest -isystem /home/sasa/bustub/build/googletest-src/googlemock/include -isystem /home/sasa/bustub/build/googletest-src/googlemock 
+CXX_INCLUDES = -I/home/ahmed/bustub/src -I/home/ahmed/bustub/src/include -I/home/ahmed/bustub/test/include -I/home/ahmed/bustub/third_party -isystem /home/ahmed/bustub/build/googletest-src/googletest/include -isystem /home/ahmed/bustub/build/googletest-src/googletest -isystem /home/ahmed/bustub/build/googletest-src/googlemock/include -isystem /home/ahmed/bustub/build/googletest-src/googlemock 
 

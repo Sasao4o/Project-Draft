@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="2" failures="0" disabled="2" errors="0" time="0" timestamp="2022-04-02T06:07:11.993" name="AllTests">
-  <testsuite name="BufferPoolManagerInstanceTest" tests="2" failures="0" disabled="2" skipped="0" errors="0" time="0" timestamp="1970-01-01T02:00:00.000">
-    <testcase name="DISABLED_BinaryDataTest" file="/home/sasa/bustub/test/buffer/buffer_pool_manager_instance_test.cpp" line="24" status="notrun" result="suppressed" time="0" timestamp="1970-01-01T02:00:00.000" classname="BufferPoolManagerInstanceTest" />
-    <testcase name="DISABLED_SampleTest" file="/home/sasa/bustub/test/buffer/buffer_pool_manager_instance_test.cpp" line="89" status="notrun" result="suppressed" time="0" timestamp="1970-01-01T02:00:00.000" classname="BufferPoolManagerInstanceTest" />
-  </testsuite>
-</testsuites>

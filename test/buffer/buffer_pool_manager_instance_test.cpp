@@ -16,12 +16,12 @@
 #include <string>
 #include "buffer/buffer_pool_manager.h"
 #include "gtest/gtest.h"
-
+using namespace std;
 namespace bustub {
 
 // NOLINTNEXTLINE
 // Check whether pages containing terminal characters can be recovered
-TEST(BufferPoolManagerInstanceTest, DISABLED_BinaryDataTest) {
+TEST(BufferPoolManagerInstanceTest, BinaryDataTest) {
   const std::string db_name = "test.db";
   const size_t buffer_pool_size = 10;
 
@@ -131,10 +131,6 @@ TEST(BufferPoolManagerInstanceTest, SampleTest) {
   // now be pinned. Fetching page 0 should fail.
   EXPECT_EQ(true, bpm->UnpinPage(0, true));
   EXPECT_NE(nullptr, bpm->NewPage(&page_id_temp));
-
-  std::map<page_id_t, frame_id_t> p=Getpagetable();
-
-  EXPECT_TRUE(false) << p ;
 
   EXPECT_EQ(nullptr, bpm->FetchPage(0));
  
