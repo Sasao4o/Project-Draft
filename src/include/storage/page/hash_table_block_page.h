@@ -133,6 +133,15 @@ class HashTableBlockPage {
    */
   bool IsEmpty();
 
+    std::pair<int, int> GetLocation(uint32_t bucket_ind) const;
+   
+
+
+  char GetMask(int which, int bit) const;
+ 
+  void SetOccupied(uint32_t bucket_idx, int bit);
+
+  void SetReadable(uint32_t bucket_idx, int bit);
   /**
    * Prints the bucket's occupancy information
    */
@@ -143,7 +152,7 @@ class HashTableBlockPage {
 
   // 0 if tombstone/brand new (never occupied), 1 otherwise.
   std::atomic_char readable_[(BLOCK_ARRAY_SIZE - 1) / 8 + 1];
-  MappingType array_[0];
+  MappingType array_[BLOCK_ARRAY_SIZE];
 };
 
 }  // namespace bustub

@@ -90,11 +90,16 @@ class HashTableHeaderPage {
   size_t NumBlocks();
 
  private:
-  __attribute__((unused)) lsn_t lsn_;
-  __attribute__((unused)) size_t size_;
-  __attribute__((unused)) page_id_t page_id_;
-  __attribute__((unused)) size_t next_ind_;
-  __attribute__((unused)) page_id_t block_page_ids_[0];
+  // __attribute__((unused)) lsn_t lsn_;
+  // __attribute__((unused)) size_t size_;
+  // __attribute__((unused)) page_id_t page_id_;
+  // __attribute__((unused)) size_t next_ind_;
+  // __attribute__((unused)) page_id_t block_page_ids_[0];
+    lsn_t lsn_;
+    size_t size_;
+    page_id_t page_id_;
+    size_t next_ind_;
+    page_id_t block_page_ids_[1020];
 };
 
 }  // namespace bustub
