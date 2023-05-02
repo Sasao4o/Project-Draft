@@ -16,7 +16,7 @@
 #include <climits>
 #include <cstdlib>
 #include <string>
-
+ 
 #include "storage/index/generic_key.h"
 #include "storage/page/hash_table_page_defs.h"
 
@@ -88,7 +88,7 @@ class HashTableHeaderPage {
    * @return the number of blocks currently stored in the header page
    */
   size_t NumBlocks();
-
+  // size_t count; 
  private:
   // __attribute__((unused)) lsn_t lsn_;
   // __attribute__((unused)) size_t size_;
@@ -96,9 +96,9 @@ class HashTableHeaderPage {
   // __attribute__((unused)) size_t next_ind_;
   // __attribute__((unused)) page_id_t block_page_ids_[0];
     lsn_t lsn_;
-    size_t size_;
+    size_t size_;   //Number of key/value pairs HB can hold!
     page_id_t page_id_;
-    size_t next_ind_;
+    size_t next_ind_; 
     page_id_t block_page_ids_[1020];
 };
 

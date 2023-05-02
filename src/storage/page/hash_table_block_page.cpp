@@ -26,16 +26,13 @@ ValueType HASH_TABLE_BLOCK_TYPE::ValueAt(slot_offset_t bucket_ind) const {
 }
 
 template <typename KeyType, typename ValueType, typename KeyComparator>
-bool HASH_TABLE_BLOCK_TYPE::Insert(slot_offset_t bucket_ind, const KeyType &key, const ValueType &value) {
+ bool HASH_TABLE_BLOCK_TYPE::Insert(KeyType key, ValueType value, KeyComparator cmp) {
   if (IsFull()) {
     return false;
   }
-  std::vector<ValueType> result;
-  GetValue(key, cmp, &result);
-  if (std::find(result.cbegin(), result.cend(), value) != result.cend()) {
-    return false;
-  }
-
+if (isKeyValueExist(key,value)) {
+  return false;
+}
   for (uint32_t i = 0; i < BUCKET_ARRAY_SIZE; i++) {
     if (!IsReadable(i)) {
       array_[i] = MappingType(key, value);
@@ -45,6 +42,28 @@ bool HASH_TABLE_BLOCK_TYPE::Insert(slot_offset_t bucket_ind, const KeyType &key,
     }
   }
   return true;
+}
+
+template <typename KeyType, typename ValueType, typename KeyComparator>
+ bool HASH_TABLE_BLOCK_TYPE::isKeyValueExist(KeyType key, ValueType value, KeyComparator cmp) {
+ std::vector<ValueType> result;
+  GetValue(key, cmp, &result);
+  if (std::find(result.cbegin(), result.cend(), value) != result.cend()) {
+    return true;
+  }
+  return false;
+ }
+template <typename KeyType, typename ValueType, typename KeyComparator>
+bool HASH_TABLE_BLOCK_TYPE::Insert(slot_offset_t bucket_ind, const KeyType &key, const ValueType &value) {
+    if (IsOccupied(bucket_ind)) {
+        return false;
+    }
+
+    array_[bucket_ind] = {key, value};
+
+    SetAsOccupied(bucket_ind);
+    SetAsReadable(bucket_ind);
+    return true;
 }
 
 template <typename KeyType, typename ValueType, typename KeyComparator>
@@ -111,7 +130,7 @@ void HASH_TABLE_BLOCK_TYPE::SetReadable(uint32_t bucket_idx, int bit) {
 
 template <typename KeyType, typename ValueType, typename KeyComparator>
 bool HASH_TABLE_BLOCK_TYPE::GetValue(KeyType key, KeyComparator cmp, std::vector<ValueType> *result) {
-  for (uint32_t i = 0; i < BLOCK_ARRAY_SIZE; i++) {
+  for (uint32_t i = 0; (int)(i < BLOCK_ARRAY_SIZE); i++) {
     if (!IsReadable(i)) {
       if (!IsOccupied(i)) {
         break;
@@ -127,7 +146,7 @@ bool HASH_TABLE_BLOCK_TYPE::GetValue(KeyType key, KeyComparator cmp, std::vector
 template <typename KeyType, typename ValueType, typename KeyComparator>
 uint32_t HASH_TABLE_BLOCK_TYPE::NumReadable() {
   uint32_t num_readable = 0;
-  for (int i = 0; i < (BLOCK_ARRAY_SIZE - 1) / 8 + 1; i++) {
+  for (int i = 0; i < (int)((BLOCK_ARRAY_SIZE - 1) / 8 + 1); i++) {
     uint8_t readable = readable_[i];
     while (readable != 0) {
       readable &= (readable - 1);
@@ -139,12 +158,17 @@ uint32_t HASH_TABLE_BLOCK_TYPE::NumReadable() {
 
 template <typename KeyType, typename ValueType, typename KeyComparator>
 bool HASH_TABLE_BLOCK_TYPE::IsFull() {
-  return NumReadable() == BUCKET_ARRAY_SIZE;
+  return NumReadable() == BLOCK_ARRAY_SIZE;
 }
 
 template <typename KeyType, typename ValueType, typename KeyComparator>
 bool HASH_TABLE_BLOCK_TYPE::IsEmpty() {
   return NumReadable() == 0;
+}
+
+template <typename KeyType, typename ValueType, typename KeyComparator>
+bool HASH_TABLE_BLOCK_TYPE::IsValid(slot_offset_t bucket_ind) const {
+  return IsOccupied(bucket_ind) && IsReadable(bucket_ind);
 }
 //THIS LINES ARE OUTSIDE THE CLASS BECAREFULLL!!!!! (5LE BALK)
 // DO NOT REMOVE ANYTHING BELOW THIS LINE

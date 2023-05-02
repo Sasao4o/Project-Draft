@@ -15,7 +15,7 @@
 #include <atomic>
 #include <utility>
 #include <vector>
-
+#include <algorithm>
 #include "common/config.h"
 #include "storage/index/int_comparator.h"
 #include "storage/page/hash_table_page_defs.h"
@@ -146,7 +146,8 @@ class HashTableBlockPage {
    * Prints the bucket's occupancy information
    */
   void PrintBucket();
-
+  bool IsValid(slot_offset_t bucket_ind) const;
+  bool isKeyValueExist(KeyType key, ValueType value, KeyComparator cmp);
  private:
   std::atomic_char occupied_[(BLOCK_ARRAY_SIZE - 1) / 8 + 1];
 
