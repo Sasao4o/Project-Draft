@@ -93,7 +93,7 @@ namespace bustub {
       //unpin all page
       buffer_pool_manager_ -> UnpinPage(blockPageId, true);
       buffer_pool_manager_ -> UnpinPage(header_page_id_, true);
-
+      this->table_latch_.RUnlock();
       return res;
     }
 
@@ -107,7 +107,10 @@ namespace bustub {
       HashTableHeaderPage * headerPage = reinterpret_cast < HashTableHeaderPage * > (hPage -> GetData());
 
       auto mmHash = hash_fn_.GetHash(key);
+ 
+    
       auto targetBlockIndex = mmHash % headerPage -> NumBlocks();
+      
       auto blockPageId = headerPage -> GetBlockPageId(targetBlockIndex);
       Page * page = buffer_pool_manager_ -> FetchPage(blockPageId);
       HASH_TABLE_BLOCK_TYPE * blockPage = reinterpret_cast < HASH_TABLE_BLOCK_TYPE * > (page -> GetData());
@@ -143,13 +146,13 @@ namespace bustub {
             break;
           }
         }
-         page->WUnLatch();
+         page->WUnlatch();
       }
       //unpin all page
       buffer_pool_manager_ -> UnpinPage(blockPageId, true);
       buffer_pool_manager_ -> UnpinPage(header_page_id_, true);
-
-      return res;
+      this->table_latch_.RUnlock();
+      return res; 
     }
 
   template < typename KeyType, typename ValueType, typename KeyComparator >
@@ -185,7 +188,7 @@ namespace bustub {
           } else if (!blockPage -> IsOccupied(i)) {
             foundEmptySlot = true;
           }
-           page->WUnLatch();
+           page->WUnlatch();
 
         }
         targetBlockIndex = (targetBlockIndex + 1) % headerPage -> NumBlocks();
@@ -198,7 +201,7 @@ namespace bustub {
       //unpin all page
       buffer_pool_manager_ -> UnpinPage(blockPageId, true);
       buffer_pool_manager_ -> UnpinPage(header_page_id_, true);
-
+      this->table_latch_.RUnlock();
       return res;
     }
 
@@ -259,6 +262,24 @@ namespace bustub {
       return size;
 
     }
+
+    //For Tests Delete Me
+template <typename KeyType, typename ValueType, typename KeyComparator>
+HashTableHeaderPage *HASH_TABLE_TYPE::HeaderPage() {
+  return reinterpret_cast<HashTableHeaderPage *>(
+      this->buffer_pool_manager_->FetchPage(this->header_page_id_)->GetData());
+  }
+template <typename KeyType, typename ValueType, typename KeyComparator>
+HashTableBlockPage<KeyType, ValueType, KeyComparator> *HASH_TABLE_TYPE::BlockPage(HashTableHeaderPage *header_page,
+                                                                                  size_t bucket_ind) {
+  return reinterpret_cast<HashTableBlockPage<KeyType, ValueType, KeyComparator> *>(
+      this->buffer_pool_manager_->FetchPage(header_page->GetBlockPageId(bucket_ind))->GetData());
+}
+template <typename KeyType, typename ValueType, typename KeyComparator>
+slot_offset_t HASH_TABLE_TYPE::GetSlotIndex(const KeyType &key) {
+  return this->hash_fn_.GetHash(key) % this->HeaderPage()->GetSize();
+}
+    //End
 
   template
   class LinearProbeHashTable < int, int, IntComparator > ;

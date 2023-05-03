@@ -148,6 +148,7 @@ class HashTableBlockPage {
   void PrintBucket();
   bool IsValid(slot_offset_t bucket_ind) const;
   bool isKeyValueExist(KeyType key, ValueType value, KeyComparator cmp);
+    size_t  NumberOfSlots();
  private:
   std::atomic_char occupied_[(BLOCK_ARRAY_SIZE - 1) / 8 + 1];
 

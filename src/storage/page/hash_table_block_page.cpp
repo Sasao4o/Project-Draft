@@ -170,6 +170,11 @@ template <typename KeyType, typename ValueType, typename KeyComparator>
 bool HASH_TABLE_BLOCK_TYPE::IsValid(slot_offset_t bucket_ind) const {
   return IsOccupied(bucket_ind) && IsReadable(bucket_ind);
 }
+
+template <typename KeyType, typename ValueType, typename KeyComparator>
+inline size_t HASH_TABLE_BLOCK_TYPE::NumberOfSlots() {
+  return BLOCK_ARRAY_SIZE;
+}
 //THIS LINES ARE OUTSIDE THE CLASS BECAREFULLL!!!!! (5LE BALK)
 // DO NOT REMOVE ANYTHING BELOW THIS LINE
 template class HashTableBlockPage<int, int, IntComparator>;

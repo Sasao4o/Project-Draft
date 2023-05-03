@@ -85,6 +85,11 @@ class LinearProbeHashTable : public HashTable<KeyType, ValueType, KeyComparator>
    * @return current size of the hash table
    */
   size_t GetSize();
+ 
+HashTableHeaderPage *HeaderPage();
+HashTableBlockPage<KeyType, ValueType, KeyComparator> *BlockPage(HashTableHeaderPage *header_page,
+                                                                                  size_t bucket_ind);
+slot_offset_t  GetSlotIndex(const KeyType &key);
 
  private:
   // member variable
