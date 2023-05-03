@@ -33,7 +33,9 @@ void HashTableHeaderPage::AddBlockPageId(page_id_t page_id) {
 size_t HashTableHeaderPage::NumBlocks() { 
     return next_ind_;
  }
-
+void HashTableHeaderPage::ResetNextIndex() {
+    next_ind_ = 0;
+}
 void HashTableHeaderPage::SetSize(size_t size) { size_ = size;}
 
 size_t HashTableHeaderPage::GetSize() const { return size_;}

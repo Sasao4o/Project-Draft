@@ -30,7 +30,7 @@ template <typename KeyType, typename ValueType, typename KeyComparator>
   if (IsFull()) {
     return false;
   }
-if (isKeyValueExist(key,value)) {
+if (isKeyValueExist(key,value, cmp)) {
   return false;
 }
   for (uint32_t i = 0; i < BUCKET_ARRAY_SIZE; i++) {
@@ -61,8 +61,8 @@ bool HASH_TABLE_BLOCK_TYPE::Insert(slot_offset_t bucket_ind, const KeyType &key,
 
     array_[bucket_ind] = {key, value};
 
-    SetAsOccupied(bucket_ind);
-    SetAsReadable(bucket_ind);
+    SetOccupied(bucket_ind , 1);
+    SetReadable(bucket_ind , 1);
     return true;
 }
 

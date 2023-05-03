@@ -88,6 +88,7 @@ class HashTableHeaderPage {
    * @return the number of blocks currently stored in the header page
    */
   size_t NumBlocks();
+  void ResetNextIndex();
   // size_t count; 
  private:
   // __attribute__((unused)) lsn_t lsn_;
