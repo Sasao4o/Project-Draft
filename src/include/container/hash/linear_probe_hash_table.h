@@ -84,7 +84,7 @@ class LinearProbeHashTable : public HashTable<KeyType, ValueType, KeyComparator>
    * Gets the size of the hash table
    * @return current size of the hash table
    */
-  size_t GetSize();
+  uint32_t GetSize();
  
 HashTableHeaderPage *HeaderPage();
 HashTableBlockPage<KeyType, ValueType, KeyComparator> *BlockPage(HashTableHeaderPage *header_page,

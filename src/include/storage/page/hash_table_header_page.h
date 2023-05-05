@@ -89,7 +89,7 @@ class HashTableHeaderPage {
    */
   size_t NumBlocks();
   void ResetNextIndex();
-  // size_t count; 
+   size_t count; 
  private:
   // __attribute__((unused)) lsn_t lsn_;
   // __attribute__((unused)) size_t size_;

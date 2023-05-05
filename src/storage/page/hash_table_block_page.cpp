@@ -48,7 +48,7 @@ template <typename KeyType, typename ValueType, typename KeyComparator>
  bool HASH_TABLE_BLOCK_TYPE::isKeyValueExist(KeyType key, ValueType value, KeyComparator cmp) {
  std::vector<ValueType> result;
   GetValue(key, cmp, &result);
-  if (std::find(result.cbegin(), result.cend(), value) != result.cend()) {
+  if (std::find(result.begin(), result.end(), value) != result.end()) {
     return true;
   }
   return false;
