@@ -84,13 +84,14 @@ class LinearProbeHashTable : public HashTable<KeyType, ValueType, KeyComparator>
    * Gets the size of the hash table
    * @return current size of the hash table
    */
-  uint32_t GetSize();
- 
+  size_t GetSize();
+ bool getTestUse();
 HashTableHeaderPage *HeaderPage();
 HashTableBlockPage<KeyType, ValueType, KeyComparator> *BlockPage(HashTableHeaderPage *header_page,
                                                                                   size_t bucket_ind);
+void appendBlocks(HashTableHeaderPage *header_page, size_t num_buckets);
 slot_offset_t  GetSlotIndex(const KeyType &key);
-
+bool testUse = false;
  private:
   // member variable
   page_id_t header_page_id_;

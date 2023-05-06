@@ -45,7 +45,7 @@ namespace bustub {
       
       auto blockNum =ceil ((double)num_buckets / (double)BLOCK_ARRAY_SIZE);
       page_id_t tmpPageId;
-      for (unsigned i = 0; i < blockNum; i++) {
+      for (size_t i = 0; i < blockNum; i++) {
 
         buffer_pool_manager -> NewPage( & tmpPageId);
 
@@ -78,7 +78,7 @@ namespace bustub {
           if (blockPage -> IsValid(i) && comparator_(blockPage -> KeyAt(i), key) == 0) {
            result->push_back(blockPage->ValueAt(i));
            res = true;
-            break;
+           break;
 
           } else if (!blockPage -> IsOccupied(i)) {
             foundEmptySlot = true;
@@ -111,46 +111,33 @@ namespace bustub {
  
     
       auto targetBlockIndex = mmHash % headerPage -> NumBlocks();
-      //auto InitialBlockIndex = targetBlockIndex;
+      
       auto blockPageId = headerPage -> GetBlockPageId(targetBlockIndex);
       Page * page = buffer_pool_manager_ -> FetchPage(blockPageId);
       HASH_TABLE_BLOCK_TYPE * blockPage = reinterpret_cast < HASH_TABLE_BLOCK_TYPE * > (page -> GetData());
       auto res = false;
-      bool found = false;
-
-      size_t visitedBlocks = 0;
-      size_t fullBlocks = 0;
+      
+      bool found = blockPage -> isKeyValueExist(key, value, comparator_);;
+      testUse = found;
+      size_t visitedBlocks = 1;
       //Check if the block is empty and no duplicate (key,value)
-      while (visitedBlocks <= headerPage -> NumBlocks()) {
-        if (blockPage -> IsFull()){
-          fullBlocks ++;
-        }
-        if (blockPage -> isKeyValueExist(key, value, comparator_)) {
-          found = true;
-          break;
-        }
+      while (!found && blockPage -> IsFull() && visitedBlocks <= headerPage -> NumBlocks()) {
+        
           targetBlockIndex = (targetBlockIndex + 1) % headerPage -> NumBlocks();
           buffer_pool_manager_ -> UnpinPage(blockPageId, true);
           blockPageId = headerPage -> GetBlockPageId(targetBlockIndex);
           page = buffer_pool_manager_ -> FetchPage(blockPageId);
           blockPage = reinterpret_cast < HASH_TABLE_BLOCK_TYPE * > (page -> GetData());
+          found = blockPage -> isKeyValueExist(key, value, comparator_);
           visitedBlocks++;
       }
 
-      if (fullBlocks >= headerPage -> NumBlocks()) {
+      if (!found && visitedBlocks > headerPage -> NumBlocks()) {
         //Resizing
             Resize(headerPage->GetSize());
             return this->Insert(transaction, key, value);
-      }  
-      if (!found) {
-        while(blockPage -> IsFull()){
-          targetBlockIndex = (targetBlockIndex + 1) % headerPage -> NumBlocks();
-          buffer_pool_manager_ -> UnpinPage(blockPageId, true);
-          blockPageId = headerPage -> GetBlockPageId(targetBlockIndex);
-          page = buffer_pool_manager_ -> FetchPage(blockPageId);
-          blockPage = reinterpret_cast < HASH_TABLE_BLOCK_TYPE * > (page -> GetData());
-        }
-        page->WLatch();
+      } else if (!found) {
+         page->WLatch();
         for (long unsigned i = 0; i < BLOCK_ARRAY_SIZE; i++) {
           if (!blockPage -> IsOccupied(i)) {
             blockPage -> Insert(i, key, value);
@@ -158,10 +145,6 @@ namespace bustub {
             res = true;
             break;
           }
-          // else if(blockPage -> IsOccupied(i) && blockPage -> ValueAt(i) == value){
-          //   res = false;
-          //   break;
-          // }
         }
          page->WUnlatch();
       }
@@ -171,6 +154,7 @@ namespace bustub {
       this->table_latch_.RUnlock();
       return res; 
     }
+
 
   template < typename KeyType, typename ValueType, typename KeyComparator >
     bool HASH_TABLE_TYPE::Remove(Transaction * transaction,
@@ -226,62 +210,41 @@ namespace bustub {
   /***************************
    * RESIZE
    ***************************/
-  template < typename KeyType, typename ValueType, typename KeyComparator >
-    void HASH_TABLE_TYPE::Resize(size_t initial_size) {
-        this->table_latch_.WLock();
-
-          auto newSize = initial_size * 2;
-          Page * hPage = buffer_pool_manager_ -> FetchPage(header_page_id_);
-          if (hPage == nullptr) return;
-          HashTableHeaderPage * headerPage = reinterpret_cast < HashTableHeaderPage * > (hPage -> GetData());
-          if (headerPage->GetSize() >= newSize) return;
-
-          //Save Old Data
-          auto oldBlocks = std::vector<HashTableBlockPage<KeyType, ValueType, KeyComparator> *>();
-          auto oldPageIds = std::vector<page_id_t>();
-          for (size_t i = 0; i < headerPage->NumBlocks(); i++) {
-            page_id_t currentPageId = headerPage->GetBlockPageId(i);
-            oldBlocks.push_back( reinterpret_cast<HashTableBlockPage<KeyType, ValueType, KeyComparator> *>(this->buffer_pool_manager_->FetchPage(currentPageId)->GetData() ));
-            oldPageIds.push_back(currentPageId);
-            this->buffer_pool_manager_->UnpinPage(currentPageId, false);
-          }
-        //Create New Blocks From Scratch (Need to be refactored DUPLICATE CODE WITH CTR)
-          headerPage -> SetSize(newSize);
-          headerPage->ResetNextIndex();
-          auto blockNum = newSize / BLOCK_ARRAY_SIZE;
-          page_id_t tmpPageId;
-          for (unsigned i = 0; i < blockNum; i++) {
-           buffer_pool_manager_ -> NewPage( & tmpPageId);
-           headerPage -> AddBlockPageId(tmpPageId);
-           buffer_pool_manager_ -> UnpinPage(tmpPageId, true);
-           }
-          //ReHash The Existing Data
-          for (size_t blockIndex = 0; blockIndex < oldBlocks.size(); blockIndex++) {
-           const auto &block = oldBlocks[blockIndex];
-           for (size_t pairIndex = 0; pairIndex < BLOCK_ARRAY_SIZE; pairIndex++) {
-           this->Insert(nullptr, block->KeyAt(pairIndex), block->ValueAt(pairIndex));
-            }
-           this->buffer_pool_manager_->DeletePage(oldPageIds[blockIndex]);
-          }
-
-           buffer_pool_manager_ -> UnpinPage(header_page_id_, true);
-            this->table_latch_.WUnlock();
-
+  template <typename KeyType, typename ValueType, typename KeyComparator>
+void HASH_TABLE_TYPE::Resize(size_t initial_size) {
+  this->table_latch_.WLock();
+  auto header_page = this->HeaderPage();
+  auto expected_size = initial_size * 2;
+  // only grow up in size
+  if (header_page->GetSize() < expected_size) {
+    auto old_size = header_page->GetSize();
+    header_page->SetSize(expected_size);
+    testUse = true;
+    this->appendBlocks(header_page, expected_size - old_size);
+    // re-organize all key-value pairs
+    auto all_old_blocks = std::vector<HashTableBlockPage<KeyType, ValueType, KeyComparator> *>();
+    auto all_block_page_ids = std::vector<page_id_t>();
+    for (size_t idx = 0; idx < header_page->NumBlocks(); idx++) {
+      all_old_blocks.push_back(this->BlockPage(header_page, idx));
+      all_block_page_ids.push_back(header_page->GetBlockPageId(idx));
     }
+    header_page->ResetNextIndex();
+    for (size_t idx = 0; idx < header_page->NumBlocks(); idx++) {
+      const auto &block = all_old_blocks[idx];
+      for (size_t pair_idx = 0; pair_idx < BLOCK_ARRAY_SIZE; pair_idx++) {
+        this->Insert(nullptr, block->KeyAt(pair_idx), block->ValueAt(pair_idx));
+      }
+      this->buffer_pool_manager_->DeletePage(all_block_page_ids[idx]);
+    }
+  }
+  this->table_latch_.WUnlock();
+}
 
   template < typename KeyType, typename ValueType, typename KeyComparator >
-    uint32_t HASH_TABLE_TYPE::GetSize() {
-
-      Page * hPage = buffer_pool_manager_ -> FetchPage(header_page_id_);
-      HashTableHeaderPage * headerPage = reinterpret_cast < HashTableHeaderPage * > (hPage -> GetData());
-       auto size = headerPage->count;
-      // size_t num_Blocks = headerPage -> NumBlocks();
-      // uint32_t size = 0;
-      // for(size_t i = 0; i < num_Blocks; i++){
-      //   auto block = reinterpret_cast < HashTableBlockPage<KeyType, ValueType, KeyComparator> * > (headerPage -> GetBlockPageId(i));
-      //   size += block -> NumReadable();
-      // }
-      buffer_pool_manager_ -> UnpinPage(header_page_id_, false);
+    size_t HASH_TABLE_TYPE::GetSize() {
+      // auto size = headerPage->count;
+      size_t size = this->HeaderPage()->GetSize();
+      //buffer_pool_manager_ -> UnpinPage(header_page_id_, false);
       return size;
 
     }
@@ -292,6 +255,10 @@ HashTableHeaderPage *HASH_TABLE_TYPE::HeaderPage() {
   return reinterpret_cast<HashTableHeaderPage *>(
       this->buffer_pool_manager_->FetchPage(this->header_page_id_)->GetData());
   }
+  template <typename KeyType, typename ValueType, typename KeyComparator>
+bool HASH_TABLE_TYPE::getTestUse() {
+  return testUse;
+  }
 template <typename KeyType, typename ValueType, typename KeyComparator>
 HashTableBlockPage<KeyType, ValueType, KeyComparator> *HASH_TABLE_TYPE::BlockPage(HashTableHeaderPage *header_page,
                                                                                   size_t bucket_ind) {
@@ -301,6 +268,17 @@ HashTableBlockPage<KeyType, ValueType, KeyComparator> *HASH_TABLE_TYPE::BlockPag
 template <typename KeyType, typename ValueType, typename KeyComparator>
 slot_offset_t HASH_TABLE_TYPE::GetSlotIndex(const KeyType &key) {
   return this->hash_fn_.GetHash(key) % this->HeaderPage()->GetSize();
+}
+template <typename KeyType, typename ValueType, typename KeyComparator>
+void HASH_TABLE_TYPE::appendBlocks(HashTableHeaderPage *header_page, size_t num_buckets) {
+  size_t total_current_buckets = header_page->NumBlocks() * BLOCK_ARRAY_SIZE;
+  for (; total_current_buckets < num_buckets; total_current_buckets += BLOCK_ARRAY_SIZE) {
+    page_id_t next_block_id;
+    assert(this->buffer_pool_manager_->NewPage(&next_block_id) != nullptr);
+    this->buffer_pool_manager_->UnpinPage(next_block_id, true);
+    this->buffer_pool_manager_->FlushPage(next_block_id);
+    header_page->AddBlockPageId(next_block_id);
+  }
 }
     //End
 
