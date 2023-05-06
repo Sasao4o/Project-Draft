@@ -143,17 +143,14 @@
 namespace bustub {
 
 TEST(HashTableTest, HashTable_Constructor) {
-    int x = 1;
-  EXPECT_EQ(x , 2);
+
   auto *disk_manager = new DiskManager("test.db");
   auto *bpm = new BufferPoolManagerInstance(30, disk_manager);
- 
+
   LinearProbeHashTable<int, int, IntComparator> ht("blah", bpm, IntComparator(), 20, HashFunction<int>());
-   
+
   EXPECT_EQ(ht.GetSize(), 20);
-    
   ht.Resize(5);
- 
   EXPECT_EQ(ht.GetSize(), 20);  // do not reduce in size
   ht.Resize(30);
   EXPECT_EQ(ht.GetSize(), 60);  // double the size
@@ -162,96 +159,96 @@ TEST(HashTableTest, HashTable_Constructor) {
   remove("test.db");
   delete disk_manager;
   delete bpm;
+  }
+
+
+TEST(HashTableTest, HashTable_FullInsert) {
+  auto *disk_manager = new DiskManager("test.db");
+  auto *bpm = new BufferPoolManagerInstance(30, disk_manager);
  
+  LinearProbeHashTable<int, int, IntComparator> ht("blah", bpm, IntComparator(), 20, HashFunction<int>());
+ // auto header_page = ht.HeaderPage();
+  for (int i = 0; i < 20; i++) {
+    ht.Insert(nullptr, i, i);
+  }
+  
+  std::vector<int> result;
+  for (int i = 0; i < 20; i++) {
+    result.clear();
+    ht.GetValue(nullptr, i, &result);
+    EXPECT_EQ(result.size(), 1);
+    EXPECT_EQ(result[0], i);
+  }
+
+  for (int i = 20; i < 40; i++) {
+    EXPECT_TRUE(ht.Insert(nullptr, i, i));
+  }
+  
+  for (int i = 20; i < 40; i++) {
+    result.clear();
+    ht.GetValue(nullptr, i, &result);
+    EXPECT_EQ(result.size(), 1);
+    EXPECT_EQ(result[0], i);
+  }
+  //while(1){}
+  EXPECT_EQ(ht.testUse,true);
+
+ // EXPECT_EQ(ht.GetSize(), 40);
+  
+  disk_manager->ShutDown();
+  remove("test.db");
+  delete disk_manager;
+  delete bpm;
 }
+}
+// // TEST(HashTableTest, HashTable_InsertAndSearch) {
 
-// TEST(HashTableTest, HashTable_FullInsert) {
-//   auto *disk_manager = new DiskManager("test.db");
-//   auto *bpm = new BufferPoolManagerInstance(30, disk_manager);
+// //   auto *disk_manager = new DiskManager("test.db");
+// //   auto *bpm = new BufferPoolManagerInstance(30, disk_manager);
 
-//   LinearProbeHashTable<int, int, IntComparator> ht("blah", bpm, IntComparator(), 20, HashFunction<int>());
-//  // auto header_page = ht.HeaderPage();
-//   for (int i = 0; i < 20; i++) {
-//     ht.Insert(nullptr, i, i);
-//   }
-  
-//   std::vector<int> result;
-//   for (int i = 0; i < 20; i++) {
-//     result.clear();
-//     ht.GetValue(nullptr, i, &result);
-//     EXPECT_EQ(result.size(), 1);
-//     EXPECT_EQ(result[0], i);
-//   }
+// //   LinearProbeHashTable<int, int, IntComparator> ht("blah", bpm, IntComparator(), 900, HashFunction<int>());
+// //   auto header_page = ht.HeaderPage();
+// //   EXPECT_EQ(header_page->NumBlocks(), 2);
 
-//   for (int i = 20; i < 40; i++) {
-//     EXPECT_TRUE(ht.Insert(nullptr, i, i));
-//   }
-  
-//   for (int i = 20; i < 40; i++) {
-//     result.clear();
-//     ht.GetValue(nullptr, i, &result);
-//     EXPECT_EQ(result.size(), 1);
-//     EXPECT_EQ(result[0], i);
-//   }
-//   //while(1){}
-//   EXPECT_EQ(ht.GetSize(), 40);
-  
-//   disk_manager->ShutDown();
-  
-//   remove("test.db");
-   
-//   delete disk_manager;
-//   delete bpm;
-// }
+// //   std::unordered_map<int, slot_offset_t> expected_index;
+// //   std::unordered_map<slot_offset_t, int> key_at_index;
+// //   for (int i = 1; i < 500; i++) {
+// //     EXPECT_TRUE(ht.Insert(nullptr, i, i * 2));
+// //     EXPECT_FALSE(ht.Insert(nullptr, i, i * 2));
+// //     auto slot_index = ht.GetSlotIndex(i);
+// //     while (key_at_index.find(slot_index) != key_at_index.end()) {
+// //       slot_index++;
+// //     }
+// //     expected_index.insert({i, slot_index});
+// //     key_at_index.insert({slot_index, i});
+// //   }
 
-// TEST(HashTableTest, HashTable_InsertAndSearch) {
+// //   auto block_pages = std::make_pair(ht.BlockPage(header_page, 0), ht.BlockPage(header_page, 1));
+// // while(1){}
+// //   unsigned number_of_slots = block_pages.first->NumberOfSlots();
+// //   for (int i = 1; i < 500; i++) {
+// //     auto slot_offset = expected_index.find(i)->second;
+// //     if (slot_offset < number_of_slots) {  // hard code - the number of slots in a block
+// //       EXPECT_EQ(block_pages.first->KeyAt(slot_offset), static_cast<int>(i));
+// //       EXPECT_EQ(block_pages.first->ValueAt(slot_offset), static_cast<int>(i * 2));
+// //     } else {
+// //       EXPECT_EQ(block_pages.second->KeyAt(slot_offset % number_of_slots), static_cast<int>(i));
+// //       EXPECT_EQ(block_pages.second->ValueAt(slot_offset % number_of_slots), static_cast<int>(i * 2));
+// //     }
+// //   }
 
-//   auto *disk_manager = new DiskManager("test.db");
-//   auto *bpm = new BufferPoolManagerInstance(30, disk_manager);
+// //   EXPECT_TRUE(ht.Insert(nullptr, 1, 1));
+// //   std::vector<int> result;
+// //   ht.GetValue(nullptr, 1, &result);
+// //   EXPECT_EQ(result.size(), 2);
 
-//   LinearProbeHashTable<int, int, IntComparator> ht("blah", bpm, IntComparator(), 900, HashFunction<int>());
-//   auto header_page = ht.HeaderPage();
-//   EXPECT_EQ(header_page->NumBlocks(), 2);
+// //   disk_manager->ShutDown();
+// //   remove("test.db");
+// //   delete disk_manager;
+// //   delete bpm;
+// // }
 
-//   std::unordered_map<int, slot_offset_t> expected_index;
-//   std::unordered_map<slot_offset_t, int> key_at_index;
-//   for (int i = 1; i < 500; i++) {
-//     EXPECT_TRUE(ht.Insert(nullptr, i, i * 2));
-//     EXPECT_FALSE(ht.Insert(nullptr, i, i * 2));
-//     auto slot_index = ht.GetSlotIndex(i);
-//     while (key_at_index.find(slot_index) != key_at_index.end()) {
-//       slot_index++;
-//     }
-//     expected_index.insert({i, slot_index});
-//     key_at_index.insert({slot_index, i});
-//   }
-
-//   auto block_pages = std::make_pair(ht.BlockPage(header_page, 0), ht.BlockPage(header_page, 1));
-// while(1){}
-//   unsigned number_of_slots = block_pages.first->NumberOfSlots();
-//   for (int i = 1; i < 500; i++) {
-//     auto slot_offset = expected_index.find(i)->second;
-//     if (slot_offset < number_of_slots) {  // hard code - the number of slots in a block
-//       EXPECT_EQ(block_pages.first->KeyAt(slot_offset), static_cast<int>(i));
-//       EXPECT_EQ(block_pages.first->ValueAt(slot_offset), static_cast<int>(i * 2));
-//     } else {
-//       EXPECT_EQ(block_pages.second->KeyAt(slot_offset % number_of_slots), static_cast<int>(i));
-//       EXPECT_EQ(block_pages.second->ValueAt(slot_offset % number_of_slots), static_cast<int>(i * 2));
-//     }
-//   }
-
-//   EXPECT_TRUE(ht.Insert(nullptr, 1, 1));
-//   std::vector<int> result;
-//   ht.GetValue(nullptr, 1, &result);
-//   EXPECT_EQ(result.size(), 2);
-
-//   disk_manager->ShutDown();
-//   remove("test.db");
-//   delete disk_manager;
-//   delete bpm;
-// }
-
-// NOLINTNEXTLINE
+// // NOLINTNEXTLINE
 // TEST(HashTableTest, SampleTest) {
 //   auto *disk_manager = new DiskManager("test.db");
 //   auto *bpm = new BufferPoolManagerInstance(50, disk_manager);
@@ -264,7 +261,7 @@ TEST(HashTableTest, HashTable_Constructor) {
 //     std::vector<int> res;
 //     ht.GetValue(nullptr, i, &res);
 //     EXPECT_EQ(1, res.size()) << "Failed to insert " << i << std::endl;
-//     while(1){}
+//     //while(1){}
 //     EXPECT_EQ(i, res[0]);
 //   }
 
@@ -336,4 +333,4 @@ TEST(HashTableTest, HashTable_Constructor) {
 //   delete bpm;
 // }
 
-}  // namespace bustub
+// }  // namespace bustub

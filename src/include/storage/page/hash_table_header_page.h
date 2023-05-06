@@ -36,7 +36,7 @@ class HashTableHeaderPage {
   /**
    * @return the number of buckets in the hash table;
    */
-  size_t GetSize() const;
+  size_t GetSize() ;
 
   /**
    * Sets the size field of the hash table to size

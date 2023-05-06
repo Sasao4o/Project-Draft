@@ -38,6 +38,6 @@ void HashTableHeaderPage::ResetNextIndex() {
 }
 void HashTableHeaderPage::SetSize(size_t size) { size_ = size;}
 
-size_t HashTableHeaderPage::GetSize() const { return size_;}
+size_t HashTableHeaderPage::GetSize()  { return size_;}
 
 }  // namespace bustub
