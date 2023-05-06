@@ -274,7 +274,7 @@ namespace bustub {
 
       Page * hPage = buffer_pool_manager_ -> FetchPage(header_page_id_);
       HashTableHeaderPage * headerPage = reinterpret_cast < HashTableHeaderPage * > (hPage -> GetData());
-       auto size = headerPage->count;
+      //  auto size = headerPage->count;
       // size_t num_Blocks = headerPage -> NumBlocks();
       // uint32_t size = 0;
       // for(size_t i = 0; i < num_Blocks; i++){
@@ -282,7 +282,7 @@ namespace bustub {
       //   size += block -> NumReadable();
       // }
       buffer_pool_manager_ -> UnpinPage(header_page_id_, false);
-      return size;
+      return headerPage->GetSize();
 
     }
 
